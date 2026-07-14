@@ -1,6 +1,3 @@
-
-
-````md
 # System Architecture
 
 ## Overview
@@ -121,55 +118,52 @@ The phone sends single-character commands:
 
 ### Normal Operation
 
-```text
-ESP32 reads sensors
-→ LCD shows temperature, humidity, and water status
-→ Robot receives Bluetooth movement commands
-→ Servo scans nozzle direction while pump is OFF
-→ Serial Monitor logs sensor data in CSV format
-```
+- ESP32 reads the sensors.
+- LCD shows temperature, humidity, and water status.
+- Robot receives Bluetooth movement commands.
+- Servo scans the nozzle direction while the pump is OFF.
+- Serial Monitor logs sensor data in CSV format.
 
 ### Fire Detection
 
-```text
-Flame sensor detects fire
-→ ESP32 stops the motors
-→ Relay turns pump ON
-→ Servo stops scanning
-→ LCD shows FIRE DETECTED and Pump ON
-→ Flow/water data is updated during pump operation
-```
+- Flame sensor detects fire.
+- ESP32 stops the motors.
+- Relay turns the pump ON.
+- Servo stops scanning.
+- LCD shows FIRE DETECTED and Pump ON.
+- Flow and water data are updated during pump operation.
 
 ### Pump and Flow Monitoring
 
 The robot uses a YF-S201 water flow sensor to measure the water flow rate during pump operation.
 
-```text
-Pump ON
-→ Flow sensor generates pulses
-→ ESP32 counts pulses
-→ Flow rate is calculated
-→ LCD displays water/pump status
-→ Serial Monitor logs flow-related data
-```
+Pump monitoring sequence:
+
+- Pump turns ON.
+- Flow sensor generates pulses.
+- ESP32 counts the pulses.
+- Flow rate is calculated.
+- LCD displays water and pump status.
+- Serial Monitor logs flow-related data.
 
 The pump was also experimentally tested. During testing, 200 mL of water was discharged in 8 seconds.
 
-```text
-Measured flow rate = 200 mL / 8 s = 25 mL/s
-```
+Measured flow rate:
+
+- Flow rate = 200 mL / 8 s
+- Flow rate = 25 mL/s
 
 This experimental value was used to validate the pump performance and compare it with the flow-monitoring behavior of the system.
 
 ### Obstacle Alert
 
-```text
-Obstacle command is received from the phone
-→ Robot stops
-→ LCD shows OBSTACLE DETECTED
-→ Message stays for 6 seconds
-→ LCD returns to normal display
-```
+Obstacle behavior:
+
+- Obstacle command is received from the phone.
+- Robot stops.
+- LCD shows OBSTACLE DETECTED.
+- Message stays for 6 seconds.
+- LCD returns to normal display.
 
 ---
 
@@ -179,9 +173,17 @@ The ESP32 prints CSV-formatted data through the Serial Monitor.
 
 Logged values include:
 
-```text
-time_ms,temp_C,humidity,flame_raw,fire,pump,water_mL,line_L,line_C,line_R,mode
-```
+- time_ms
+- temp_C
+- humidity
+- flame_raw
+- fire
+- pump
+- water_mL
+- line_L
+- line_C
+- line_R
+- mode
 
 This data can be saved as a `.csv` file and used for plotting and analysis.
 
@@ -189,30 +191,25 @@ This data can be saved as a `.csv` file and used for plotting and analysis.
 
 ## 8. System Block Diagram
 
-```text
-                    Phone App
-                       |
-                    Bluetooth
-                       |
-                     ESP32
-     ------------------------------------------------
-     |          |          |          |              |
- Flame       DHT11     Line       Flow          HX711 + Load Cell
- Sensor                Sensor     Sensor        Not integrated
-     |
- Fire Detection Logic
-     |
- ----------------------------------------------------
- |             |              |                      |
-LCD         L298N          Relay                 Servo
-Display     Motor Driver    Pump Control          Nozzle
-              |              |
-           DC Motors      12V Water Pump
-```
-````
+Phone App  
+↓  
+Bluetooth  
+↓  
+ESP32  
 
-When committing, use:
+Sensors connected to ESP32:
 
-```text
-Fix system architecture formatting
-```
+- Flame sensor
+- DHT11 temperature and humidity sensor
+- Line tracking sensor
+- Flow sensor
+- HX711 + load cell module, not integrated in final prototype
+
+Outputs controlled by ESP32:
+
+- LCD display
+- L298N motor driver
+- DC motors
+- Relay module
+- 12V water pump
+- Servo nozzle
