@@ -189,27 +189,3 @@ This data can be saved as a `.csv` file and used for plotting and analysis.
 
 ---
 
-## 8. System Block Diagram
-
-Phone App  
-↓  
-Bluetooth  
-↓  
-ESP32  
-
-Sensors connected to ESP32:
-
-- Flame sensor
-- DHT11 temperature and humidity sensor
-- Line tracking sensor
-- Flow sensor
-- HX711 + load cell module, not integrated in final prototype
-
-Outputs controlled by ESP32:
-
-- LCD display
-- L298N motor driver
-- DC motors
-- Relay module
-- 12V water pump
-- Servo nozzle
