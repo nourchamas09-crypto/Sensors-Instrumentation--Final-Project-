@@ -45,7 +45,7 @@ It is responsible for:
 | DHT11 | Measures temperature and humidity | Digital input |
 | Flow sensor YF-S201 | Measures water flow rate using pulses | Digital pulse input |
 | 5-channel line tracking sensor | Detects path/line for navigation | Digital inputs |
-| HC-SR04 ultrasonic sensor | Supports obstacle detection | Digital trigger/echo |
+| HC-SR04 ultrasonic sensor | Detects obstacles by measuring distance | Digital trigger/echo |
 | Load cell + HX711 | Force/weight sensing module available, but not integrated in the final prototype due to limited available pins after connecting the main robot subsystems | HX711 digital interface |
 
 The flame sensor is used as the main emergency detection sensor. When the flame sensor detects fire, the robot automatically stops and activates the water pump.
@@ -148,23 +148,22 @@ Pump monitoring sequence:
 
 The pump was also experimentally tested. During testing, 200 mL of water was discharged in 8 seconds.
 
-Measured flow rate:
 
-- Flow rate = 200 mL / 8 s
-- Flow rate = 25 mL/s
+This experimental value was used to validate the pump performance and compare it with the flow-sensor results behavior of the system.
 
-This experimental value was used to validate the pump performance and compare it with the flow-monitoring behavior of the system.
+### Obstacle Detection
 
-### Obstacle Alert
+The robot uses HC-SR04 ultrasonic sensors to detect nearby obstacles.
 
-Obstacle behavior:
+Obstacle detection behavior:
 
-- Obstacle command is received from the phone.
-- Robot stops.
+- The ultrasonic sensor sends a trigger pulse.
+- The echo signal is measured by the ESP32.
+- The distance to the obstacle is calculated.
+- If the measured distance is below the safety threshold, the robot stops.
 - LCD shows OBSTACLE DETECTED.
-- Message stays for 6 seconds.
-- LCD returns to normal display.
-
+- The message stays for 6 seconds.
+- The robot can continue after the obstacle is cleared.
 ---
 
 ## 7. Data Logging
@@ -188,4 +187,35 @@ Logged values include:
 This data can be saved as a `.csv` file and used for plotting and analysis.
 
 ---
+## 8. System Block Diagram
+
+Phone App  
+↓  
+Bluetooth manual override / testing  
+↓  
+ESP32  
+
+Sensors connected to ESP32:
+
+- Flame sensor
+- DHT11 temperature and humidity sensor
+- YF-S201 water flow sensor
+- 5-channel line tracking sensor
+- HC-SR04 ultrasonic obstacle sensor
+- HX711 + load cell module, not integrated in final prototype
+
+Outputs controlled by ESP32:
+
+- LCD display
+- L298N motor driver
+- DC motors
+- Relay module
+- 12V water pump
+- Servo nozzle
+
+Main automatic responses:
+
+- Flame detected → motors stop → pump turns ON → LCD shows fire alert
+- Obstacle detected → motors stop → LCD shows obstacle alert
+- Line detected → robot adjusts movement according to sensor readings
 
