@@ -1,6 +1,3 @@
-Demo Video Link:
-To be added after recording the final demonstration.
+https://drive.google.com/file/d/1Na42N5qbFTFgobNhHIoOThhqxMcw_JC5/view?usp=sharing
 
-Video Description:
-The final video will show the autonomous firefighting and rescue robot operating during the demo. It will include LCD readings, Bluetooth testing/control, line tracking, obstacle detection, flame detection, pump activation, servo nozzle behavior, and Serial Monitor logging.
 
