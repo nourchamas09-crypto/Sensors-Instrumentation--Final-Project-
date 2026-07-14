@@ -1,6 +1,6 @@
 
 
-````md
+```text
 # System Architecture
 
 ## Overview
