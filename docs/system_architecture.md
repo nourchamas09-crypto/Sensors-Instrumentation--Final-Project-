@@ -1,14 +1,17 @@
 
 
-```text
+````md
 # System Architecture
 
 ## Overview
 
-The robot is an ESP32-based indoor firefighting and rescue robot prototype.  
-The ESP32 acts as the main controller: it reads sensors, controls actuators, displays status on the LCD, logs data through Serial Monitor, and receives commands from a phone through Bluetooth.
+The robot is an ESP32-based indoor firefighting and rescue robot prototype.
 
-The robot monitors fire, temperature, humidity, water flow, navigation status, and obstacle alerts. A load cell and HX711 module were included in the project components, but they were not integrated into the final prototype because the available ESP32 pins were already assigned to the main sensing, movement, display, pump, and communication subsystems.
+The ESP32 acts as the main controller. It reads sensors, controls actuators, displays status on the LCD, logs data through the Serial Monitor, and receives commands from a phone through Bluetooth.
+
+The robot monitors fire, temperature, humidity, water flow, navigation status, and obstacle alerts.
+
+A load cell and HX711 module were included in the project components, but they were not integrated into the final prototype because the available ESP32 pins were already assigned to the main sensing, movement, display, pump, and communication subsystems.
 
 The system is divided into five main parts:
 
@@ -33,7 +36,7 @@ It is responsible for:
 - Moving the servo nozzle
 - Updating the LCD display
 - Receiving Bluetooth commands
-- Printing CSV data through Serial Monitor
+- Printing CSV data through the Serial Monitor
 
 ---
 
@@ -48,8 +51,7 @@ It is responsible for:
 | HC-SR04 ultrasonic sensor | Supports obstacle detection | Digital trigger/echo |
 | Load cell + HX711 | Force/weight sensing module available, but not integrated in the final prototype due to limited available pins after connecting the main robot subsystems | HX711 digital interface |
 
-The flame sensor is used as the main emergency detection sensor.  
-When the flame sensor detects fire, the robot automatically stops and activates the water pump.
+The flame sensor is used as the main emergency detection sensor. When the flame sensor detects fire, the robot automatically stops and activates the water pump.
 
 The flow sensor is used to measure water flow during pump operation by producing pulses that are counted by the ESP32.
 
@@ -70,8 +72,7 @@ The line tracking sensor uses OUT2, OUT3, and OUT4 for left, center, and right p
 
 The pump is controlled through a relay because the ESP32 cannot power the pump directly.
 
-The servo scans the nozzle direction while the pump is OFF.  
-When the pump turns ON, the servo automatically stops so the water is sprayed in one direction.
+The servo scans the nozzle direction while the pump is OFF. When the pump turns ON, the servo automatically stops so the water is sprayed in one direction.
 
 ---
 
@@ -126,7 +127,7 @@ ESP32 reads sensors
 → Robot receives Bluetooth movement commands
 → Servo scans nozzle direction while pump is OFF
 → Serial Monitor logs sensor data in CSV format
-````
+```
 
 ### Fire Detection
 
@@ -208,12 +209,10 @@ Display     Motor Driver    Pump Control          Nozzle
               |              |
            DC Motors      12V Water Pump
 ```
-
 ````
 
-Commit message:
+When committing, use:
 
 ```text
-Add system architecture documentation
-````
-
+Fix system architecture formatting
+```
