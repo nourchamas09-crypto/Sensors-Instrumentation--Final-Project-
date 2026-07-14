@@ -1,4 +1,4 @@
-# Individual Contribution: [Your Name]
+# Individual Contribution: Nour chamas
 
 ## Main Responsibilities
 
