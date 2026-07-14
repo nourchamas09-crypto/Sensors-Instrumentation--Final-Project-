@@ -1,4 +1,4 @@
-Replace the whole `docs/system_architecture.md` file with this:
+
 
 ````md
 # System Architecture
