@@ -1,4 +1,4 @@
-# Autonomous Firefighting and Rescue Robot
+# Autonomous Firefighting Robot
 
 ## Project Overview
 
