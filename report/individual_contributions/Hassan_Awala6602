@@ -1,0 +1,58 @@
+Main Responsibilities
+My main contributions involved working closely with the project team throughout the entire development process, participating in group work sessions for assembly, wiring, and testing. While we collaborated on the overall system architecture as a group, my specific individual responsibilities included selecting the project's sensor modalities, performing the mathematical calculations for the sensors and wheel mechanics, and taking ownership of the motor subsystem wiring using the L298N driver.
+Project Preparation
+At the beginning of the project, I participated in group brainstorming and planning sessions to define the scope of the Guardian robot based on the available components.
+My specific preparation contributions included:
+
+Researching and choosing the specific sensors required to meet the five mandatory modalities (Optical, Flow, Temperature, Humidity, and Fire/Infrared).
+
+Selecting the appropriate HC-SR04, DHT11, YF-S201, and TCRT5000 modules to ensure compatibility with our microcontroller's logic levels.
+
+Collaborating with the team to finalize the overall Bill of Materials (BOM) before purchasing.
+
+Hardware Contribution
+I was present and active during the group assembly and general wiring sessions, assisting my teammates with the physical build of the robot.
+My primary individual hardware contributions included:
+
+Taking full responsibility for the motor subsystem and wheel installation.
+
+Wiring the DC motors to the L298N motor driver, ensuring proper power distribution and ground connections.
+
+Setting up the Y-splitter configuration on the L298N driver to optimize pin usage for the main controller.
+
+Working alongside the group to integrate my motor subsystem with the rest of the chassis and sensor mounts.
+
+Testing and Troubleshooting
+I participated in group testing sessions, working alongside my teammates to troubleshoot the robot's overall behavior, including fire detection and line tracking.
+My specific focus during these group sessions was handling the required calculations and calibrations:
+
+Performing the necessary mathematical conversions to translate raw ultrasonic time-of-flight data into accurate distance measurements in centimeters.
+
+Calculating and adjusting the specific flow rate calibration factor (7.5) for the YF-S201 water sensor.
+
+Executing the required mechanical and speed calculations for the wheels and motor output.
+
+Assisting the team in fine-tuning the physical potentiometers on the optical line trackers to eliminate environmental noise.
+
+Final Prototype and Demo Contribution
+I worked alongside the group to prepare the final physical appearance of the robot and ensure it met all functional constraints for the 60-second continuous demonstration.
+I collaborated with the team to test and refine the robot behaviors shown in the video, including:
+
+The synchronization of the wheel motors during line-tracking and obstacle-avoidance maneuvers.
+
+The automatic motor shut-off triggered by the firefighting override.
+
+Reviewing the Serial Monitor output alongside the team to ensure the live data matched our physical testing.
+
+Documentation Contribution
+I contributed to organizing and preparing the GitHub documentation and final technical report alongside the rest of the team.
+My specific documentation inputs included:
+
+Providing the documented mathematical calculations and calibration formulas used for the sensors.
+
+Detailing the wiring schematic and power distribution logic for the L298N motor driver and wheel assembly.
+
+Reviewing the contribution documents and test code files for final submission.
+
+Summary
+Overall, I contributed by working consistently alongside my group during the assembly, testing, and troubleshooting phases, while specifically taking the lead on choosing the hardware sensors, executing the necessary system calculations, and wiring the L298N motor and wheel assembly for the final prototype.
