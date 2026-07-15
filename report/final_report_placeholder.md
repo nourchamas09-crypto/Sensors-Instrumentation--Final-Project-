@@ -1,4 +1,4 @@
-[Uploading Autonomous_Firefighting_Robot_Final_Report.pdf…]()
+
 # Final Report Placeholder
 
 The final project report will be added here after completing the final testing, calibration, demo recording, and data analysis.
