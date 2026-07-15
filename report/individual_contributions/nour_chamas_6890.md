@@ -2,9 +2,8 @@
 
 ## Main Responsibilities
 
-My main contributions were related to project preparation, hardware support, assembly and wiring sessions, troubleshooting, documentation support, and final demo preparation.
+My contribution covered project preparation, component purchasing, continuous attendance during group work sessions, hardware assembly support, sensor testing and troubleshooting, final robot appearance, presentation video filming/editing, and GitHub documentation organization.
 
-I was involved throughout the project development process and was present during the group work sessions for assembly, wiring, and testing, except for the motor driver and wheel installation.
 
 ---
 
@@ -18,7 +17,9 @@ I also bought the main project components from the store and later purchased mis
 
 ## Hardware Contribution
 
-I contributed to the hardware side by being present during the assembly, wiring, and testing sessions.
+I was present during all group work sessions related to the project, including assembly, wiring, testing, troubleshooting, and final preparation.
+
+I participated in almost all physical work on the robot, except mainly the motor driver and wheel installation. I was involved in the general wiring, testing, sensor debugging, final adjustments,
 
 My hardware contribution included:
 
@@ -58,7 +59,10 @@ I also helped test the robot behavior during integration, including fire detecti
 
 I helped prepare the final physical appearance of the robot, including the container/cover used on the car.
 
-I also recorded the final demonstration video and helped decide what parts of the robot behavior should be shown in the video, including:
+I also handled the filming and editing of the presentation/demo video. This included showing the robot components, recording the robot behavior, organizing the clips, and preparing the final video format for the presentation.
+
+The video preparation was important because it helped present the project clearly and showed the function of the main sensors and components.
+
 
 - LCD readings.
 - Bluetooth movement control.
@@ -74,6 +78,7 @@ I also recorded the final demonstration video and helped decide what parts of th
 
 I contributed to organizing and preparing the GitHub documentation by working on the project files and reviewing what needed to be included.
 
+
 This included helping prepare or organize:
 
 - Repository structure.
@@ -85,7 +90,10 @@ This included helping prepare or organize:
 - Contribution documentation.
 
 ---
+Personal Reflection
 
-## Summary
+This project helped me understand how much work is needed to move from an idea to a working prototype. I learned that hardware projects require repeated testing, debugging, and replacing or adjusting components when they do not work as expected.
+
+I also learned the importance of documenting the process, because many important project decisions came from troubleshooting.
 
 Overall, I contributed by preparing and purchasing project components, supporting the group during assembly, wiring, testing, and troubleshooting, helping with the final physical design of the robot, recording the demonstration video, and helping organize the GitHub documentation for the final submission.
