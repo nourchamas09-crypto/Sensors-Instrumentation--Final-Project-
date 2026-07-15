@@ -184,11 +184,45 @@ The servo needed proper ESP32Servo setup with timer allocation and pulse width l
 
 The servo setup was changed to:
 
+The servo setup was changed to:
+
 ```cpp
 ESP32PWM::allocateTimer(0);
 ESP32PWM::allocateTimer(1);
 ESP32PWM::allocateTimer(2);
 ESP32PWM::allocateTimer(3);
+```
 
+---
+
+## Battery Charger Issue
+
+### Problem
+
+During development, the original battery charger was lost.
+
+### Solution
+
+A replacement charger was purchased. The new charger was rated at 12V and 1A.
+
+Because the charging current was 1A, the battery charged more slowly, but it was still suitable for charging the 12V battery safely.
+
+---
+
+## Relay Module Failure
+
+### Problem
+
+During testing, the relay module stopped working and was damaged.
+
+### Cause
+
+The relay was repeatedly used to switch the 12V pump during testing. Since the pump is an inductive load, switching it can stress the relay module if the wiring or protection is not ideal.
+
+### Solution
+
+A replacement relay module was purchased and installed.
+
+After replacing the relay, the pump control worked again. The final system used the relay to switch the 12V pump because the ESP32 cannot power the pump directly.
 nozzleServo.setPeriodHertz(50);
 nozzleServo.attach(SERVO_PIN, 500, 2400);
